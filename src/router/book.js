@@ -7,7 +7,7 @@ const { authJwt } = require('../middlewares')
 router.post('/', [authJwt.verifyToken], BookController.create)
 
 //get all books
-router.get('/', [authJwt.verifyToken, authJwt.isAdmin], BookController.findAll)
+router.get('/', BookController.findAll)
 
 //borrow book
 router.get('/borrow', BookController.borrow)

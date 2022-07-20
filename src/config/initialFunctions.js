@@ -9,7 +9,6 @@ initialFunctions = Role.estimatedDocumentCount()
             }).save((err) => {
                 if (err)
                     console.log("error", err);
-                console.log("user role user add");
             })
 
             new Role({
@@ -17,12 +16,10 @@ initialFunctions = Role.estimatedDocumentCount()
             }).save((err) => {
                 if (err)
                     console.log("error", err);
-                console.log("user role admin add");
             })
         }
     })
     .catch((err) => {
-        console.log("bug", err);
 
     })
 

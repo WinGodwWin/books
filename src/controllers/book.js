@@ -1,4 +1,6 @@
 const Book = require('../models/book')
+const db = require('../models')
+const User = db.user
 
 exports.create = (req, res) => {
 
@@ -7,6 +9,8 @@ exports.create = (req, res) => {
         description: req.body.description,
         disponible: req.body.disponible,
         nametheme: req.body.nametheme,
+        image: req.body.image,
+        user: req.body.user,
     });
 
     book.save(book)
@@ -68,6 +72,7 @@ exports.update = (req, res) => {
         .catch((error) => {
             return res.status(400).json({ error })
         })
+
 }
 
 exports.delete = (req, res) => {

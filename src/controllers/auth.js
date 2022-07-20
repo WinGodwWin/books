@@ -30,7 +30,7 @@ exports.signup = (req, res) => {
                     if (error)
                         return res.status(500).json({ error })
 
-                    return res.status(201).json({ data })
+                    return res.status(201).json({})
                 })
             })
         else
@@ -43,7 +43,7 @@ exports.signup = (req, res) => {
                     if (error)
                         return res.status(500).json({ error })
 
-                    return res.status(201).json({ data })
+                    return res.status(201).json({})
                 })
             })
     })
@@ -74,10 +74,7 @@ exports.signin = (req, res) => {
             let token = jwt.sign({ id: user.id }, config.secret, { expiresIn: 86400 })
 
             let authorities = [];
-            console.log('sss ', user);
-            // for (let i = 0; i < user.roles.length; i++) {
             authorities.push("ROLE_" + user.roles.name.toUpperCase())
-            // }
 
             return res.status(200).send({
                 id: user._id,

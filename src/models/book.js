@@ -17,6 +17,15 @@ const Book = mongoose.model('Book', new mongoose.Schema({
         type: String,
         required: true
     },
+    user: {
+        type: String
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: "User"
+    },
+    image: {
+        type: String,
+        required: true
+    },
 },
     { timestamps: true }
 ))
